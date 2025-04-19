@@ -274,7 +274,7 @@ function renderStudentCards() {
   const studentData = {
     "12th_science": [
       {
-        name: "Sonu Kumar( Nirmali Topper 2015 )",
+        name: "Sonu Kumar( Nirmali Topper 2025 )",
         marks: 450,
         class: "12th",
         subjects: {
