@@ -291,7 +291,7 @@ function renderStudentCards() {
           Math: 90,
           Physics: 97,
         },
-        image: "images/Student/Jk.jpg",
+        image: "images/Student/jk.jpg",
       },
       {
         name: "Nitish Kumar",
