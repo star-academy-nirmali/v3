@@ -207,6 +207,13 @@
             return obj;
           });
 
+          // 🔥 SORT BY TOTAL MARKS (DESC)
+          filtered.sort((a, b) => {
+            return (
+              Number(b["Total Marks"] || 0) - Number(a["Total Marks"] || 0)
+            );
+          });
+
           latestJSON = filtered;
           latestFileName = name + ".json";
 
