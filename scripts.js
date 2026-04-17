@@ -286,6 +286,15 @@ function renderStudentCards() {
   const studentData = {
     "12th_science": [
       {
+        name: "Manjit Kumar",
+        class: "12th",
+        subjects: {
+          Math: 93,
+          // Physics removed
+        },
+        image: "images/Student/1775720336978.png",
+      },
+      {
         name: "Sonu Kumar( Nirmali Topper 2025 )",
         marks: 450,
         class: "12th",
