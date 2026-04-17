@@ -295,6 +295,42 @@ function renderStudentCards() {
         image: "images/Student/1775720336978.png",
       },
       {
+        name: "Sujit Kumar",
+        class: "12th",
+        subjects: {
+          Math: 89,
+          // Physics removed
+        },
+        image: "images/Student/1775720146228.png",
+      },
+      {
+        name: "Amit Kumar",
+        class: "12th",
+        subjects: {
+          Math: 97,
+          // Physics removed
+        },
+        image: "images/Student/1775720005631.png",
+      },
+      {
+        name: "Ranjeeta Kumar",
+        class: "12th",
+        subjects: {
+          Math: 92,
+          // Physics removed
+        },
+        image: "images/Student/1775719839441.png",
+      },
+      {
+        name: "DURGA Shankar",
+        class: "12th",
+        subjects: {
+          Math: 94,
+          // Physics removed
+        },
+        image: "images/Student/1775719566139.png",
+      },
+      {
         name: "Sonu Kumar( Nirmali Topper 2025 )",
         marks: 450,
         class: "12th",
