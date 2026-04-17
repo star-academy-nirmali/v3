@@ -176,7 +176,7 @@ function setupCountUpAnimation() {
         }
       });
     },
-    { threshold: 0.5 }
+    { threshold: 0.5 },
   );
 
   counters.forEach((counter) => {
@@ -237,7 +237,7 @@ function setupStudentModals() {
       const name = this.querySelector(".card-body .card-text");
       const marks = this.querySelector(".only-mark");
       const classInfo = Array.from(this.querySelectorAll(".card-text")).find(
-        (p) => p.textContent.startsWith("Class:")
+        (p) => p.textContent.startsWith("Class:"),
       );
 
       if (img && name && marks && classInfo) {
@@ -268,6 +268,18 @@ function setupStudentModals() {
     }
   });
 }
+
+document.querySelector("form").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const name = document.querySelector('input[type="text"]').value;
+  const phone = document.querySelector('input[type="tel"]').value;
+  const message = document.querySelector("textarea").value;
+
+  const whatsappMessage = `Name: ${name}%0APhone: ${phone}%0AMessage: ${message}`;
+
+  window.open(`https://wa.me/9110115022?text=${whatsappMessage}`, "_blank");
+});
 
 // Function to dynamically render student cards
 function renderStudentCards() {
