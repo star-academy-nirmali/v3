@@ -278,7 +278,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
 
   const whatsappMessage = `Name: ${name}%0APhone: ${phone}%0AMessage: ${message}`;
 
-  window.open(`https://wa.me/9110115022?text=${whatsappMessage}`, "_blank");
+  window.open(`https://wa.me/8405812160?text=${whatsappMessage}`, "_blank");
 });
 
 // Function to dynamically render student cards
