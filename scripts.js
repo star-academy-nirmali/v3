@@ -287,6 +287,7 @@ function renderStudentCards() {
     "12th_science": [
       {
         name: "Manjit Kumar",
+        batch: "2025-26",
         class: "12th",
         subjects: {
           Math: 93,
@@ -296,6 +297,7 @@ function renderStudentCards() {
       },
       {
         name: "Sujit Kumar",
+        batch: "2025-26",
         class: "12th",
         subjects: {
           Math: 89,
@@ -305,6 +307,7 @@ function renderStudentCards() {
       },
       {
         name: "Amit Kumar",
+        batch: "2025-26",
         class: "12th",
         subjects: {
           Math: 97,
@@ -314,6 +317,7 @@ function renderStudentCards() {
       },
       {
         name: "Ranjeeta Kumar",
+        batch: "2025-26",
         class: "12th",
         subjects: {
           Math: 92,
@@ -323,6 +327,7 @@ function renderStudentCards() {
       },
       {
         name: "DURGA Shankar",
+        batch: "2025-26",
         class: "12th",
         subjects: {
           Math: 94,
@@ -332,6 +337,7 @@ function renderStudentCards() {
       },
       {
         name: "Sonu Kumar( Nirmali Topper 2025 )",
+        batch: "2024-25",
         marks: 450,
         class: "12th",
         subjects: {
@@ -547,14 +553,22 @@ function renderStudentCards() {
   const container = mainContainer.querySelector(".container");
 
   // Render students dynamically
+  // Render students dynamically
   for (const grade in studentData) {
+    // 🔥 Sort students by Math marks (highest first)
+    studentData[grade].sort((a, b) => {
+      const aMath = a.subjects?.Math ?? -1;
+      const bMath = b.subjects?.Math ?? -1;
+      return bMath - aMath;
+    });
+
     // Create heading
     const gradeTitle = document.createElement("h3");
     gradeTitle.textContent =
       grade === "12th_science" ? "Class 12th (Science)" : "Class 10th";
     gradeTitle.className = "mt-4 mb-3";
 
-    // Create a new row for this group
+    // Create row
     const row = document.createElement("div");
     row.className = "row row-cols-2 row-cols-sm-2 row-cols-md-4 g-3";
 
@@ -564,7 +578,7 @@ function renderStudentCards() {
       row.appendChild(studentCard);
     });
 
-    // Append everything
+    // Append
     container.appendChild(gradeTitle);
     container.appendChild(row);
   }
@@ -596,10 +610,18 @@ function createStudentCard(student) {
   name.textContent = student.name;
   cardBody.appendChild(name);
 
-  const marks = document.createElement("p");
-  marks.className = "only-mark";
-  marks.textContent = `Marks: ${student.marks}`;
-  cardBody.appendChild(marks);
+  // Show Marks OR Batch (not both)
+  if (student.marks !== undefined && student.marks !== null) {
+    const marks = document.createElement("p");
+    marks.className = "only-mark";
+    marks.textContent = `Marks: ${student.marks}`;
+    cardBody.appendChild(marks);
+  } else if (student.batch) {
+    const batch = document.createElement("p");
+    batch.className = "card-text";
+    batch.textContent = `Batch: ${student.batch}`;
+    cardBody.appendChild(batch);
+  }
 
   const classInfo = document.createElement("p");
   classInfo.className = "card-text";
